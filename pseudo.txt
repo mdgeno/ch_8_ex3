@@ -1,0 +1,66 @@
+//modules and crates for;
+	-main root/ui
+            |
+        -back end
+	    |
+	-database
+
+//main mod/ui
+	-asks user input, calls the necessary functions <ok>
+	-add employee <ok>
+	-view departments 
+		-view all employees in department
+	-view all employees	
+
+//database
+	-stores employees through hashmap
+	-vectors??
+
+//back end (module of functions)
+	-receives from user input and stores info in database
+	-retrieves info from database and outputs.
+	-retrieves info from database, sorts, and outputs.
+	-contains functions which ui will execute
+
+-utilising hashmaps in modules does not seem to be working!!
+	>backend needs to bring in its own hashmap?
+	>database fn needs to return a hashmap that backend can use?
+	>will it be the same for root file?
+-research about accessing contents of hashmap in module
+>>>> something about global variables????
+>>>> global variables issue seem to disappear when HashMap variables via
+	let are just from via direct parent child module access.
+	Creates errors when it goes past first degree parent child module
+	access.
+
+-add a feature that lets you take all keys associated to a value (department)
+	and to output all its employees in alphabetical order.
+	-iterate through all the keys, 
+	compare the values of each keys
+	according to the desired department(value), 
+	add the necessary
+	keys to a vector, 
+	sort the vector, 
+	printed the vector!
+
+CONTINUE HERE!!!
+-make the print_department function interactive!!
+-now sort the department output!!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
