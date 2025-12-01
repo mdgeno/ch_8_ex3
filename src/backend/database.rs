@@ -54,10 +54,22 @@ impl EmployeeDatabase{
 				continue;
 			}
 		}
+		
+		all_in_dep.sort();
 
 		for staff in all_in_dep{
 			println!("{staff}");
 		}
+	}
+
+	pub fn print_all_in_dep(){
+		
+	}
+	
+
+	//will it need to be publicised?
+	fn view_dep(department: &str){
+		
 	}
 	
 }

@@ -45,7 +45,10 @@
 
 CONTINUE HERE!!!
 -make the print_department function interactive!!
--now sort the department output!!
+	-make a function that outputs all departments
+	-prompt the user to input the department name to view all 
+	employees
+	
 
 
 

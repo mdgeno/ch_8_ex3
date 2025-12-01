@@ -11,7 +11,8 @@ fn main() {
 		println!("Enter number of desired action:");
 		println!("1 Add Employee");
 		println!("2 List all Employees");
-		println!("3 Exit Program");
+		println!("3 View Department");
+		println!("4 Exit Program");
 
 		let mut input = String::new();
 		io::stdin().read_line(&mut input).expect("enter correct input");
@@ -21,7 +22,9 @@ fn main() {
 				continue},
 			"2" => {list.print_all_staff();
 				break},
-			"3" => break,
+			"3" => {list.print_all_in_dep();
+				break},
+			"4" => break,
 			_ => {println!("incorrect input");
 			      continue}
 		}
@@ -50,5 +53,5 @@ fn main() {
 	println!(" ");
 	println!("print all staff in Sales department");
 
-	list.print_department("Sales");
+	list.print_department("Engineering");
 }
