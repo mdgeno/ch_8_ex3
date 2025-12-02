@@ -10,9 +10,7 @@ impl EmployeeDatabase{
 		EmployeeDatabase{ map: HashMap::new() }
 	}
 
-	pub fn add_employee(&mut self, k: &str, v: &str){
-
-/* //don't forget to remove parameters
+	pub fn add_employee(&mut self){ //k: &str, v: &str){
 		println!("Enter Full Name");
 		let mut input = String::new();
 		io::stdin().read_line(&mut input).expect("enter correct input");
@@ -24,13 +22,18 @@ impl EmployeeDatabase{
 		let value_dep = input.trim();
 
 		self.map.insert(key_name.to_string(), value_dep.to_string());
+		
+		println!(" ");
+/*
+		self.map.insert(k.to_string(), v.to_string());
 */
-	self.map.insert(k.to_string(), v.to_string());
 
 	}
 
 	
 	pub fn print_all_staff(&self){
+		println!(" ");
+
 		let mut all_staff = Vec::new();
 		for k in self.map.keys(){
 			all_staff.push(k);
@@ -39,37 +42,75 @@ impl EmployeeDatabase{
 		for staff in &all_staff{
 			println!("{staff}");
 		}
+
+		println!(" ");
 	}
 
-	pub fn print_department(&self, dep: &str){
+	pub fn print_dep(&self){
+		println!(" ");
+		println!("Existing Departments:");
+		self.all_dep();
+		println!("Input the Department you want to view:");
+		let mut input = String::new();
+		io::stdin().read_line(&mut input).expect("Enter correct input");
+
 		let mut all_in_dep = Vec::new();
 		for k in self.map.keys(){
-			let mut department = match self.map.get(k){
+			let department = match self.map.get(k){
 						Some(val) => val,
 						None => continue
 					     };
-			if department == dep {
+			if department == input.trim() {
 				all_in_dep.push(k);
 			}else{
 				continue;
 			}
 		}
-		
-		all_in_dep.sort();
 
+		println!(" ");
+		println!("All Employees in {} Department", input.trim());	
+		all_in_dep.sort();
 		for staff in all_in_dep{
 			println!("{staff}");
 		}
+		println!(" ");
 	}
 
-	pub fn print_all_in_dep(){
-		
-	}
-	
+	fn all_dep(&self){
+		let mut dep = Vec::new();
+		for department in self.map.values(){
+			if !dep.contains(&department){
+				dep.push(&department);
+			}	
+		}
 
-	//will it need to be publicised?
-	fn view_dep(department: &str){
-		
-	}
-	
+		for department in dep{
+			println!("{department}");
+		}
+	}	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

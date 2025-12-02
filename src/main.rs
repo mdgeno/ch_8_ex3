@@ -6,9 +6,9 @@ pub mod backend;
 fn main() {
 
 	let mut list = EmployeeDatabase::new_list();
-/*	
+	
 	loop{
-		println!("Enter number of desired action:");
+		println!("Enter the Number of desired action:");
 		println!("1 Add Employee");
 		println!("2 List all Employees");
 		println!("3 View Department");
@@ -21,16 +21,16 @@ fn main() {
 			"1" => {list.add_employee();
 				continue},
 			"2" => {list.print_all_staff();
-				break},
-			"3" => {list.print_all_in_dep();
-				break},
+				continue},
+			"3" => {list.print_dep();
+				continue},
 			"4" => break,
 			_ => {println!("incorrect input");
 			      continue}
 		}
 	}
-*/
 
+/*
 	let emp1 = String::from("EmployeeA One");
 	let emp2 = String::from("EmployeeB Two");
 	let emp3 = String::from("EmployeeC Three");
@@ -51,7 +51,6 @@ fn main() {
 	list.print_all_staff();
 
 	println!(" ");
-	println!("print all staff in Sales department");
-
-	list.print_department("Engineering");
+	list.print_dep();
+*/
 }
